@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: movies-app-svc
+  namespace: default
+spec:
+  selector:
+    app: movies-service-app
+  ports:
+    - port: 80           # Service port
+      targetPort: 9090   # Container port (application port)
+  type: NodePort

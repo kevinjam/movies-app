@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movies-service-app
+spec:
+  selector:
+    matchLabels:
+      app: movies-service-app
+  template:
+    metadata:
+      labels:
+        app: movies-service-app
+    spec:
+      containers:
+        - name: movies-service-app
+          image: kevinjan/movies-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9090
+          env:
+            - name: SPRING_DATA_MONGODB_URI
+              value: mongodb://mongodb:27017/moviesdb
+
+
