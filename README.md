@@ -61,10 +61,10 @@ To run the application locally, Docker and Docker Compose are used. The database
 
 ## 2. Deploy to Minikube
 
-Minikube allows you to run Kubernetes clusters locally for testing and development purposes.
+Minikube allows to run Kubernetes clusters locally for testing and development purposes.
 
 ### Steps:
-1. **Install Minikube:**
+1. **Install Minikube:** if not already installed.
 
    - **For macOS:**
      ```bash
@@ -80,7 +80,10 @@ Minikube allows you to run Kubernetes clusters locally for testing and developme
    ```bash
    minikube start
    ```
-
+You can also check the status of the cluster by running:
+   ```bash
+   minikube status
+   ```
 3. **Navigate to the Kubernetes directory:**
    Go to the `k8s` directory inside your project root that contains the Kubernetes deployment files:
    - `mongodb-deployment.yaml`
@@ -200,3 +203,5 @@ The pipeline configuration is located in the `.github/workflows/deploy.yaml` fil
 
 All rights reserved.
 by Kevin JC
+---
+You can create a Pull Request to this repository to contribute or report issues.
