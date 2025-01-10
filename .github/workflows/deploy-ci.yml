@@ -1,0 +1,29 @@
+name: Docker CI/CD Automation
+
+on:
+  push:
+    branches:
+      - main #we are deploying only main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      #checkout code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+            # Step 3: Build the Docker image
+      - name: Build Docker image
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/movies-app:latest .
+
+      # Step 4: Push the Docker image to Docker Hub Registry
+      - name: Build and Push Docker Image
+        run: docker push ${{ secrets.DOCKER_USERNAME }}/movies-app:latest
