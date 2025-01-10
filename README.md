@@ -1,5 +1,5 @@
 
-# Movies App: CI/CD and Deployment with Minikube
+# CI/CD and Deployment with Minikube
 
 This project is an application that runs a movie service connected to a MongoDB database. It includes a local setup using Docker Compose for faster development and deployment on Minikube for Kubernetes.
 
@@ -24,8 +24,8 @@ To run the application locally, Docker and Docker Compose are used. The database
 ### Steps:
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/kevinjam/movie-app.git
-   cd movie-app
+   git clone https://github.com/kevinjam/movies-app.git
+   cd movies-app
    ```
 
 2. **Build the application:**
@@ -51,13 +51,11 @@ To run the application locally, Docker and Docker Compose are used. The database
    ```bash
    docker compose up (MacOs)
    ```
-   [Screenshot](https://imgur.com/undefined)
-
-   6. **Access the application:**
+6. **Access the application:**
       Verify the application is running by going to:
       [http://localhost:9090/movies](http://localhost:9090/movies)
 
-      [Postman collection link](https://github.com/kevinjam/movie-app/blob/main/postman_collection.json)
+      [Postman collection link](https://github.com/kevinjam/movies-app/blob/main/postman_collection.json)
 
 ---
 
@@ -101,7 +99,7 @@ Minikube allows you to run Kubernetes clusters locally for testing and developme
    ```bash
    kubectl get services
    kubectl get pods
-   kubectl describe pod <movies-service-app>
+   kubectl describe pod movies-service-app
    ```
 
 6. **Access the Minikube Dashboard (optional):**
@@ -111,8 +109,9 @@ Minikube allows you to run Kubernetes clusters locally for testing and developme
    ```
 ## Screenshots
 
-![Kubernetes Deployment](https://imgur.com/t3XtF7S)
 *Kubernetes Deployment.*
+![Kubernetes Deployment](https://i.imgur.com/t3XtF7S_d.webp?maxwidth=760&fidelity=grand?raw=true)
+
 ---
 
 ## 3. Required Minikube Setup Commands
@@ -141,6 +140,8 @@ Ensure you have the following commands and setups ready to work with Minikube:
    kubectl describe pod <pod-name>
    kubectl get all
    ```
+*Commands.*
+![Minikube Setup Commands](https://i.imgur.com/t3XtF7S_d.webp?maxwidth=720&fidelity=grand?raw=true)
 
 ---
 
@@ -165,7 +166,7 @@ The pipeline configuration is located in the `.github/workflows/deploy.yaml` fil
 
 ### Steps:
 1. **Set up secrets:**
-   Ensure that `DOCKER_USERNAME` and `DOCKER_PASSWORD` are provided in the repository secrets on GitHub.
+   Ensure that `DOCKER_USERNAME` and `DOCKER_PASSWORD` are provided in the repository secrets on GitHub under Secrets and Variables , click Actions.
 
 2. **Trigger GitHub Actions:**
    Once you push code to the `main` branch, the GitHub Actions workflow will be triggered. It will:
@@ -186,16 +187,16 @@ The pipeline configuration is located in the `.github/workflows/deploy.yaml` fil
 - Docker Hub credentials and access are properly configured for pushing and pulling images.
 
 ### Challenges:
-- **Image Pull Issues:** There were issues with pulling MongoDB images in Minikube due to rate limiting by Docker Hub.
-- **Docker Hub Rate Limiting:** Docker Hub's rate limiting caused delays during the build process.
-- **Network Issues:** Ensuring proper communication between services (MongoDB and the application) within Kubernetes was a challenge.
-
+- **Image Pull Issues:** There were issues with pulling MongoDB images in Minikube due to rate limiting by Docker Hub.i got the same issue with movie-app image too
 ---
 
 ## Screenshots
 
-![Application Screenshot](https://imgur.com/a/EmDfhne)
-*Description of the screenshot.*
+*Minikube Dashboard.*
+![Minikube Dashboard](https://i.imgur.com/WJ6SwlB_d.webp?maxwidth=720&fidelity=grand?raw=true)
 
-![Deployment Status](path-to-screenshot-2.png)
-*Description of the screenshot.*
+*[Minikube Service ].*
+![Start](https://i.imgur.com/WM9qRXV_d.webp?maxwidth=720&fidelity=grand?raw=true)
+
+All rights reserved.
+by Kevin JC

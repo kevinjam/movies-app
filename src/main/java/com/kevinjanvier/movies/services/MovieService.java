@@ -16,8 +16,8 @@ public class MovieService {
         this.movieRepository = movieRepository;
     }
 
-    public void saveMovie(Movie movie) {
-        movieRepository.save(movie);
+    public Movie saveMovie(Movie movie) {
+       return movieRepository.save(movie);
     }
 
     public List<Movie> findAllMovies(){
