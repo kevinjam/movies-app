@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Inception",
+    "genre": "Sci-Fi",
+    "director": "Kevin",
+    "year": 2010
+  },
+  {
+    "title": "Titanic",
+    "genre": "Romance",
+    "director": "Romance Director",
+    "year": 1997
+  }
+]
