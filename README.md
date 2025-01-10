@@ -1,5 +1,5 @@
 
-# Movies App: CI/CD and Deployment with Minikube
+# CI/CD and Deployment with Minikube
 
 This project is an application that runs a movie service connected to a MongoDB database. It includes a local setup using Docker Compose for faster development and deployment on Minikube for Kubernetes.
 
@@ -195,8 +195,8 @@ The pipeline configuration is located in the `.github/workflows/deploy.yaml` fil
 *Minikube Dashboard.*
 ![Minikube Dashboard](https://i.imgur.com/WJ6SwlB_d.webp?maxwidth=720&fidelity=grand?raw=true)
 
-*Minikube Service [app name].*
-![Get Movies Endpoint](https://i.imgur.com/WM9qRXV_d.webp?maxwidth=720&fidelity=grand?raw=true)
+*[Minikube Service ].*
+![Start](https://i.imgur.com/WM9qRXV_d.webp?maxwidth=720&fidelity=grand?raw=true)
 
 All rights reserved.
 by Kevin JC
