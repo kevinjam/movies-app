@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  app:
+    image: movies-app:latest
+    ports:
+      - "9090:9090"
+    depends_on:
+      - mongo
+    environment:
+      MONGO_URI: mongodb://mongo:27017/moviesdb
+    networks:
+      - app-network
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    networks:
+      - app-network
+    volumes:
+      - mongo-data:/data/db
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mongo-data:

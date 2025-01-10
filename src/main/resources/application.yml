@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: movies
+  data:
+    mongodb:
+      uri: ${MONGO_URI}
+      username: root
+      password: secret
+logging:
+  level:
+    .org.springframework.data.mongodb: DEBUG
+server:
+  port: 9090
